@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text } from 'react-native';
+import {Text} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import WatchlistStack from '../Watchlist/WatchlistStack';
-import OrderScreen from '../Order/OrderScreen';
+// import WatchlistStack from '../Watchlist/WatchlistStack';
+// import OrderScreen from '../Order/OrderScreen';
 import PortfolioScreen from '../Portfolio/PortfolioScreen';
 import FundScreen from '../Fund/FundScreen';
 import {font} from '../../common/Font';
@@ -15,21 +15,11 @@ import {styles} from './styles';
 import Usertab from '../../../assets/svg/usertab';
 import AccountStack from '../Account/AccountStack';
 import DrawerRoutes from '../Drawer/DrawerRoutes';
+import DrawerOrder from '../Drawer/DrawerOrder';
+import DrawerPortFolio from '../Drawer/DrawerPortFolio';
 
 const Tabstack = () => {
   const Tab = createBottomTabNavigator();
-
-  const getTabBarVisibility = route => {
-    const routeName = route.state
-      ? route.state.routes[route.state.index].name
-      : '';
-
-    if (routeName === 'AccountScreen') {
-      return true;
-    }
-
-    return false;
-  };
 
   return (
     <Tab.Navigator
@@ -44,11 +34,6 @@ const Tabstack = () => {
           fontFamily: font.nunitoregular,
         },
       }}>
-      {/* <Stack.Screen
-          name="DrawerRoutes"
-          component={DrawerRoutes}
-          options={{headerShown: false}}
-        /> */}
       <Tab.Screen
         name="DrawerRoutes"
         options={{
@@ -74,33 +59,9 @@ const Tabstack = () => {
         }}
         component={DrawerRoutes}
       />
-      {/* <Tab.Screen
-          name="WatchlistStack"
-          options={{
-            tabBarIcon: ({focused}) => (
-              <Watchlist
-                active={
-                  focused ? color.color_bottomtab : color.color_bottominactive
-                }
-              />
-            ),
-            tabBarLabel: ({focused}) =>
-              focused ? (
-                <Text
-                  style={{
-                    fontSize: 10,
-                    color: focused
-                      ? color.color_bottomtab
-                      : color.color_bottominactive,
-                  }}>
-                  Watchlist
-                </Text>
-              ) : null,
-          }}
-          component={WatchlistStack}
-        /> */}
+
       <Tab.Screen
-        name="OrderScreen"
+        name="DrawerOrder"
         options={{
           tabBarIcon: ({focused}) => (
             <Order
@@ -122,10 +83,10 @@ const Tabstack = () => {
               </Text>
             ) : null,
         }}
-        component={OrderScreen}
+        component={DrawerOrder}
       />
       <Tab.Screen
-        name="PortfolioScreen"
+        name="DrawerPortFolio"
         options={{
           tabBarIcon: ({focused}) => (
             <Portfolio
@@ -147,7 +108,7 @@ const Tabstack = () => {
               </Text>
             ) : null,
         }}
-        component={PortfolioScreen}
+        component={DrawerPortFolio}
       />
       <Tab.Screen
         name="FundScreen"
@@ -178,7 +139,6 @@ const Tabstack = () => {
       <Tab.Screen
         name="AccountStack"
         options={({route}) => ({
-          tabBarVisible: getTabBarVisibility(route),
           tabBarIcon: ({focused}) => (
             <Usertab
               active={focused ? color.color_bottomtab : color.color_usersap}

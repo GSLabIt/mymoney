@@ -27,9 +27,19 @@ import Calculator from '../../../assets/svg/calculator';
 import Gold from '../../../assets/svg/gold';
 import Signout from '../../../assets/svg/signout';
 import Modal from 'react-native-modal';
+import CustomButton from '../../component/buttons/CustomButton';
+import Modallog from '../../../assets/svg/modallog';
+import useStore from '../../../store';
 
 const CustomSidebarMenu = props => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [focus, setFocus] = useState(true);
+  const {press} = useStore();
+  const toggleModal = () => {
+    setFocus(true);
+    setIsModalVisible(!isModalVisible);
+  };
+
   return (
     <DrawerContentScrollView {...props}>
       <View style={styles.sideMenuContainer}>
@@ -72,8 +82,7 @@ const CustomSidebarMenu = props => {
 
         <TouchableOpacity
           style={[styles.dashbordview, {paddingBottom: 20}]}
-          onPress={()=>setIsModalVisible(true)}
-          >
+          onPress={() => toggleModal()}>
           <Signout />
           <Text style={styles.dashbord}>Sign out</Text>
         </TouchableOpacity>
@@ -83,17 +92,63 @@ const CustomSidebarMenu = props => {
           animationIn={'fadeInDown'}
           animationOut={'fadeInDown'}
           backdropColor={color.color_black}
-          backdropOpacity={0.5}
-          >
-          <View
-            style={{
-              backgroundColor: color.color_white,
-              width: '100%',
-            
-              borderTopRightRadius: 15,
-              borderTopLeftRadius: 15,
-              paddingBottom: 50,
-            }}></View>
+          backdropOpacity={0.5}>
+          <View style={styles.mainview}>
+            <View style={{alignSelf: 'center'}}>
+              <Modallog />
+            </View>
+            <Text style={styles.suretext}>
+              Are you sure you want to Logout.?
+            </Text>
+            <View style={styles.rowview}>
+              <TouchableOpacity
+                style={{
+                  flex: 1,
+                  borderWidth: 1,
+                  paddingVertical: 7,
+                  paddingHorizontal: 10,
+                  borderRadius: 12,
+                  backgroundColor: focus
+                    ? color.color_white
+                    : color.color_darkblue,
+                  borderColor: focus ? color.color_black : color.color_darkblue,
+                }}
+                onPress={() => {
+                  setFocus(false);
+                  // press
+                }}>
+                <Text
+                  style={[
+                    styles.yestext,
+                    {color: focus ? color.color_black : color.color_white},
+                  ]}>
+                  Yes
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  flex: 1,
+                  borderWidth: 1,
+                  paddingVertical: 7,
+                  paddingHorizontal: 10,
+                  marginLeft: 20,
+                  borderRadius: 12,
+                  backgroundColor: focus
+                    ? color.color_darkblue
+                    : color.color_white,
+                  borderColor: focus ? color.color_darkblue : color.color_black,
+                }}
+                onPress={toggleModal}>
+                <Text
+                  style={[
+                    styles.yestext,
+                    {color: focus ? color.color_white : color.color_black},
+                  ]}>
+                  No
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </Modal>
       </View>
     </DrawerContentScrollView>

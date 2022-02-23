@@ -25,4 +25,6 @@ export const color = {
   color_limit:"#858093",
   color_filter:"#0D1F3C",
   color_filterborder:"#DFDFDF",
+  color_notification:"#ABABAB",
+  color_bankhorizontal:"#F2F2F2"
 };

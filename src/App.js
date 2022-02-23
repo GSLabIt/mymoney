@@ -2,14 +2,14 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import NavigationConst from './navigation';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const App = () => {
   return (
     <SafeAreaProvider>
-    <NavigationContainer>
-      <NavigationConst />
-    </NavigationContainer>
+      <NavigationContainer>
+        <NavigationConst/>
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 };

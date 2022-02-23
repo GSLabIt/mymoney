@@ -54,7 +54,7 @@ const SignUpScreen = ({props, navigation}) => {
           <View style={styles.subcontainer}>
             <CustomButton
               textname="Sign Up"
-              onPress={() => navigation.navigate('NumberPad')}
+              onPress={() => navigation.navigate('CreatePinScreen')}
             />
             <View style={styles.accountview}>
               <Text style={styles.account}>Already have an account? </Text>

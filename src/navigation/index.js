@@ -26,7 +26,10 @@ import EnterNewPinScreen from '../screen/EnterNewPin/EnterNewPinScreen';
 import SecurityConformPinScreen from '../screen/SecurityConformScreen/SecurityConformPinScreen';
 import SecurityForgotPin from '../screen/SecurityForgotPin/SecurityForgotPin';
 import SecurityEmailVarification from '../screen/SecurityEmailVarification/SecurityEmailVarification';
-
+import NotificationScreen from '../screen/Notification/NotificationScreen';
+import useStore from '../../store';
+// import SeeAll from '../screen/SeeAll/SeeAll';
+import BankDetails from '../screen/BankDetailsScreen/BankDetails';
 
 export const Auth = () => {
   const Stack = createNativeStackNavigator();
@@ -89,32 +92,34 @@ export const Auth = () => {
         component={ChangePassword}
         options={{headerShown: false}}
       />
-     
     </Stack.Navigator>
   );
 };
 
 export const MainStack = () => {
   const Stack = createNativeStackNavigator();
-
+  const {issign} = useStore();
   return (
-    <Stack.Navigator screenOptions={({navigation}) => ({})}>
-      <Stack.Screen
-        name="Auth"
-        component={Auth}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Tabstack"
-        component={Tabstack}
-        options={{headerShown: false}}
-      />
+    <Stack.Navigator>
+      {!issign ? (
+        <Stack.Screen
+          name="Auth"
+          component={Auth}
+          options={{headerShown: false}}
+        />
+      ) : (
+        <Stack.Screen
+          name="Tabstack"
+          component={Tabstack}
+          options={{headerShown: false}}
+        />
+      )}
       <Stack.Screen
         name="InformationScreen"
         component={InformationScreen}
         options={{headerShown: false}}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="VerifyNumberScreen"
         component={VerifyNumberScreen}
         options={{headerShown: false}}
@@ -124,7 +129,7 @@ export const MainStack = () => {
         component={TabVarificationPin}
         options={{headerShown: false}}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="WellDone"
         component={WellDone}
         options={{headerShown: false}}
@@ -134,7 +139,7 @@ export const MainStack = () => {
         component={TabSecurity}
         options={{headerShown: false}}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="TabChangePassword"
         component={TabChangePassword}
         options={{headerShown: false}}
@@ -149,7 +154,7 @@ export const MainStack = () => {
         component={EnterOldPinScreen}
         options={{headerShown: false}}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="EnterNewPinScreen"
         component={EnterNewPinScreen}
         options={{headerShown: false}}
@@ -159,20 +164,32 @@ export const MainStack = () => {
         component={SecurityConformPinScreen}
         options={{headerShown: false}}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="SecurityForgotPin"
         component={SecurityForgotPin}
         options={{headerShown: false}}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="SecurityEmailVarification"
         component={SecurityEmailVarification}
         options={{headerShown: false}}
       />
-     
+      <Stack.Screen
+        name="NotificationScreen"
+        component={NotificationScreen}
+        options={{headerShown: false}}
+      />
+      {/* <Stack.Screen
+        name="SeeAll"
+        component={SeeAll}
+        options={{headerShown: false}}
+      /> */}
+      <Stack.Screen
+        name="BankDetails"
+        component={BankDetails}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
-
-   
   );
 };
 

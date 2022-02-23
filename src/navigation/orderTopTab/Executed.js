@@ -54,6 +54,7 @@ const Executed = () => {
               justifyContent: 'space-between',
               paddingHorizontal: 10,
               paddingVertical: 15,
+              marginHorizontal:10
             }}>
             <View style={{flexDirection: 'column', flex: 1}}>
               <View style={{flexDirection: 'row', flex: 1}}>

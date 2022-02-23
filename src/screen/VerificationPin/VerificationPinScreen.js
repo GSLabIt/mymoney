@@ -3,8 +3,10 @@ import React from 'react';
 import NumberPad from '../../component/NumberPad/NumberPad';
 import {styles} from './styles';
 import Appheader from '../../component/AppHeader/appheader';
+import useStore from "../../../store"
 
 const VerificationPinScreen = ({navigation}) => {
+  const {press} = useStore();
   return (
     <SafeAreaView style={styles.container}>
       <Appheader
@@ -16,7 +18,7 @@ const VerificationPinScreen = ({navigation}) => {
         accountText="If You Forget Your PIN? "
         pinText="Reset PIN"
         onPress={() => navigation.navigate('ForgotPinScreen')}
-          onbutton={() => navigation.navigate('Tabstack')}
+        onbutton={press}
       />
     </SafeAreaView>
   );

@@ -27,5 +27,24 @@ import {color} from '../../common/color';
         alignSelf: 'center',
         paddingLeft: 20,
       },
-      dashbordview:{flexDirection: 'row', paddingTop: 30}
+      dashbordview:{flexDirection: 'row', paddingTop: 30},
+      mainview:{
+        backgroundColor: color.color_white,
+        width: '90%',
+        alignSelf: 'center',
+        paddingVertical: 20,
+        paddingHorizontal: 15,
+        borderRadius: 15,
+      },
+      suretext:{
+        textAlign: 'center',
+        color: color.color_black,
+        fontSize: 14,
+        fontFamily: font.nunitoregular,
+        paddingTop: 20,
+      },
+      rowview:{flexDirection: 'row', marginTop: 25},
+      yestext: { textAlign: 'center',
+      fontSize: 18,
+      fontFamily: font.nunitobold,}
   });
