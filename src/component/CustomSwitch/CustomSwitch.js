@@ -11,8 +11,8 @@ const CustomSwitch = (props) => {
     <Switch
     value={isEnabled}
     onValueChange={toggleSwitch}
-    circleSize={30}
-    barHeight={35}
+    circleSize={22}
+    barHeight={25}
     circleBorderWidth={1}
     activeText={'    '}
     inActiveText={'    '}
@@ -22,8 +22,8 @@ const CustomSwitch = (props) => {
     backgroundInactive={color.color_gray}
     circleActiveColor={color.color_white}
     circleInActiveColor={color.color_white}
-    switchLeftPx={10}
-    switchRightPx={10}
+    switchLeftPx={200}
+    switchRightPx={200}
   />
   )
 }

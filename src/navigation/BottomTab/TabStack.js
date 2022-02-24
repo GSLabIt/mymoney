@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import WatchlistStack from '../Watchlist/WatchlistStack';
 // import OrderScreen from '../Order/OrderScreen';
@@ -38,11 +38,13 @@ const Tabstack = () => {
         name="DrawerRoutes"
         options={{
           tabBarIcon: ({focused}) => (
+            <View style={{opacity:0.5}}>
             <Watchlist
               active={
                 focused ? color.color_bottomtab : color.color_bottominactive
               }
             />
+            </View>
           ),
           tabBarLabel: ({focused}) =>
             focused ? (
@@ -64,11 +66,13 @@ const Tabstack = () => {
         name="DrawerOrder"
         options={{
           tabBarIcon: ({focused}) => (
+            <View style={{opacity:0.5}}>
             <Order
               active={
                 focused ? color.color_bottomtab : color.color_bottominactive
               }
             />
+            </View>
           ),
           tabBarLabel: ({focused}) =>
             focused ? (
@@ -89,11 +93,13 @@ const Tabstack = () => {
         name="DrawerPortFolio"
         options={{
           tabBarIcon: ({focused}) => (
+            <View style={{opacity:0.5}}>
             <Portfolio
               active={
                 focused ? color.color_bottomtab : color.color_bottominactive
               }
             />
+            </View>
           ),
           tabBarLabel: ({focused}) =>
             focused ? (
@@ -114,11 +120,13 @@ const Tabstack = () => {
         name="FundScreen"
         options={{
           tabBarIcon: ({focused}) => (
+            <View style={{opacity:0.5}}>
             <Fund
               active={
                 focused ? color.color_bottomtab : color.color_bottominactive
               }
             />
+            </View>
           ),
           tabBarLabel: ({focused}) =>
             focused ? (
@@ -140,9 +148,11 @@ const Tabstack = () => {
         name="AccountStack"
         options={({route}) => ({
           tabBarIcon: ({focused}) => (
+            <View style={{opacity:0.5}}>
             <Usertab
               active={focused ? color.color_bottomtab : color.color_usersap}
             />
+            </View>
           ),
           tabBarLabel: ({focused}) =>
             focused ? (

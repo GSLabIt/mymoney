@@ -10,6 +10,9 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     color: color.color_black,
     textAlign: 'center',
+    paddingLeft:20,
+    paddingRight:20,
+    alignSelf:'center'
   },
   mainview: {alignSelf: 'center',  flex: 1, alignItems: 'center'},
   subview: {

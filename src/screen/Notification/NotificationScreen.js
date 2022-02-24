@@ -21,17 +21,17 @@ const NotificationScreen = ({navigation}) => {
     },
     {
       icon: <Notification />,
-      text: 'Eric Holfman2 hrs ago2 hrs ago',
+      text: 'Eric Holfman2 hrs ago2 hrs ago      ',
       time: '12.20 Am',
     },
     {
       icon: <Notification />,
-      text: 'Justas Galaburda5 hrs ago5 hrs ago ',
+      text: 'Justas Galaburda5 hrs ago5 hrs ago   ',
       time: '2.00 pm',
     },
     {
       icon: <Axissell />,
-      text: 'Eric Holfman10 hrs ago10 hrs ago ',
+      text: 'Eric Holfman10 hrs ago10 hrs ago    ',
       time: '3.00 Am',
     },
     {
@@ -49,7 +49,7 @@ const NotificationScreen = ({navigation}) => {
         data={DATA}
         renderItem={({item, index}) => (
           <View
-            style={{flexDirection: 'row', marginTop: 20, marginHorizontal: 10}}>
+            style={{flexDirection: 'row', marginTop: 20, marginHorizontal: 5}}>
             {item.icon}
             <Text
               style={{
@@ -58,12 +58,15 @@ const NotificationScreen = ({navigation}) => {
                 fontSize: 14,
                 textAlign: 'center',
                 color: color.color_lightblack,
+                justifyContent: 'flex-start',
               }}>
               {item.text}
             </Text>
             <Text
               style={{
                 alignSelf: 'center',
+                justifyContent: 'flex-end',
+
                 fontSize: 12,
                 color: color.color_notification,
               }}>

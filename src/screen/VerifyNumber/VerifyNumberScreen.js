@@ -5,6 +5,7 @@ import {
   ScrollView,
   TextInput,
   Image,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import {styles} from './styles';
@@ -29,7 +30,6 @@ const VerifyNumberScreen = ({navigation}) => {
             color={color.color_darkblue}
             unfilledColor={color.color_progressblue}
             borderWidth={0.2}
-            
             style={{alignSelf: 'center'}}
           />
           <Text

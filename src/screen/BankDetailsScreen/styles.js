@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: font.nunitobold,
     color: color.color_black,
+    alignSelf:"flex-end"
   },
   nseview: {
     flexDirection: 'row',
@@ -58,6 +59,7 @@ export const styles = StyleSheet.create({
     fontFamily: font.nunitobold,
     color: color.color_black,
     paddingHorizontal: 15,
+    paddingTop:10
   },
   marketview: {flexDirection: 'row', height: 325, paddingHorizontal: 10},
   bidtext: {

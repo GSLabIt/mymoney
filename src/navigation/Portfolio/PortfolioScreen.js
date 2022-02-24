@@ -20,7 +20,7 @@ const PortfolioScreen = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <View style={{flexDirection: 'row', marginTop: 10}}>
         <TouchableOpacity
-          style={{paddingLeft: 5, paddingRight: 15, paddingTop: 15}}
+          style={{paddingLeft: 20, paddingRight: 15, paddingTop: 15}}
           onPress={() => navigation.openDrawer()}>
           <Drawer />
         </TouchableOpacity>
@@ -28,7 +28,7 @@ const PortfolioScreen = ({navigation}) => {
           <CustomSearch />
         </View>
       </View>
-      <View style={{marginBottom: 7, flex: 1}}>
+      <View style={{ flex: 1}}>
         <Portfoliotop />
       </View>
     </SafeAreaView>

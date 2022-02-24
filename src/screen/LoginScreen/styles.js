@@ -22,9 +22,9 @@ export const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     backgroundColor: color.color_white,
   },
-  checkboxview: {flexDirection: 'row', marginLeft: 15},
+  checkboxview: {flexDirection: 'row', marginLeft: 15,alignSelf:'center'},
   forgot: {
-    paddingRight: 50,
+    paddingRight: 20,
     fontSize: 13,
     fontFamily: font.montserratregular,
     color: color.color_black,

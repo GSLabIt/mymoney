@@ -9,6 +9,7 @@ import CustomButton from '../../component/buttons/CustomButton';
 const InformationScreen = ({navigation}) => {
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
+  const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [zipcode, setZipcode] = useState('');
   const [citizenship, setcitizenship] = useState('');
@@ -68,6 +69,25 @@ const InformationScreen = ({navigation}) => {
             placeholder="Hardwick"
             onChangeText={setLastName}
             value={lastname}
+            underlineColorAndroid={color.color_gray}
+            placeholderTextColor={color.color_lightblack}
+            style={{fontSize: 19, color: color.color_lightblack}}
+          />
+
+          <Text
+            style={{
+              fontSize: 15,
+              fontWeight: '600',
+              fontFamily: font.nunitoregular,
+              color: color.color_lightblack,
+              paddingTop: 10,
+            }}>
+            Street address
+          </Text>
+          <TextInput
+            placeholder="74  Monroe Avenue"
+            onChangeText={setAddress}
+            value={address}
             underlineColorAndroid={color.color_gray}
             placeholderTextColor={color.color_lightblack}
             style={{fontSize: 19, color: color.color_lightblack}}

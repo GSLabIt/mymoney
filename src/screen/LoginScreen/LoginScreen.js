@@ -70,7 +70,7 @@ const LoginScreen = ({props, navigation}) => {
               onPress={() => navigation.navigate('VerificationPinScreen')}
             />
             <View style={styles.accountview}>
-              <Text style={styles.account}>Don’t have an account? </Text>
+              <Text style={styles.account}>Don’t have an account?  </Text>
               <Text
                 style={styles.signup}
                 onPress={() => {

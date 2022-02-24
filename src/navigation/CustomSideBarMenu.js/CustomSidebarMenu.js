@@ -44,6 +44,7 @@ const CustomSidebarMenu = props => {
     <DrawerContentScrollView {...props}>
       <View style={styles.sideMenuContainer}>
         <Mattie />
+
         <Text style={styles.profileHeaderText}>Mattie{'\n'}Hardwick</Text>
         <View style={styles.dashbordview}>
           <Dashbord />
@@ -52,11 +53,13 @@ const CustomSidebarMenu = props => {
 
         <View style={styles.dashbordview}>
           <Matual />
+
           <Text style={styles.dashbord}>Matual Funds</Text>
         </View>
 
         <View style={styles.dashbordview}>
           <Research />
+
           <Text style={styles.dashbord}>Research</Text>
         </View>
 
@@ -67,6 +70,7 @@ const CustomSidebarMenu = props => {
 
         <View style={styles.dashbordview}>
           <Ipo />
+
           <Text style={styles.dashbord}>IPO</Text>
         </View>
 

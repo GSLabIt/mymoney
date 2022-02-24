@@ -11,13 +11,14 @@ export const styles = StyleSheet.create({
   },
   welcome: {
     fontFamily: font.nunitosemibold,
-    fontSize: 20,
+    fontSize: 21,
     fontWeight: 'normal',
     color: color.color_black,
+    paddingTop:5
   },
   money: {
     fontFamily: font.nunitobold,
-    fontSize: 28,
+    fontSize: 29,
     fontWeight: 'normal',
     color: color.color_black,
   },

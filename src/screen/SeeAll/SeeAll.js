@@ -183,7 +183,7 @@ const SeeAll = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <View style={{flexDirection: 'row', marginTop: 10}}>
         <TouchableOpacity
-          style={{paddingLeft: 5, paddingRight: 15, paddingTop: 15}}
+          style={{paddingLeft: 20, paddingRight: 15, paddingTop: 15}}
           onPress={() => navigation.openDrawer()}>
           <Drawer />
         </TouchableOpacity>
@@ -201,11 +201,12 @@ const SeeAll = ({navigation}) => {
           borderTopRightRadius: 20,
           paddingHorizontal: 10,
           paddingTop: 20,
+          paddingBottom:20
         }}>
         <Text
           style={{
             fontSize: 18,
-            fontFamily: font.nunitoregular,
+            fontFamily: font.nunitosemibold,
             color: color.color_black,
           }}>
           All Stocks
@@ -283,6 +284,7 @@ const SeeAll = ({navigation}) => {
                     paddingTop: 2,
                     color: item.colorstatus,
                     textAlign: 'center',
+                    alignSelf:"flex-end"
                   }}>
                   {item.prise}
                 </Text>

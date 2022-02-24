@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   mainscroll: {backgroundColor: color.color_white, marginTop: -25},
   toptextview: {
     flexDirection: 'row',
-    paddingHorizontal: 20,
+  
     paddingTop: 20,
     justifyContent: 'space-between',
   },
@@ -110,6 +110,7 @@ export const styles = StyleSheet.create({
   rupeemodal: {
     fontSize: 18,
     fontFamily: font.nunitobold,
+    alignSelf:"flex-end"
   },
   baracketmodal: {
     fontSize: 13,
@@ -194,7 +195,7 @@ export const styles = StyleSheet.create({
     fontFamily: font.nunitoregular,
   },
   Stoploss: {
-    fontSize: 18,
+    fontSize: 17,
     fontFamily: font.nunitosemibold,
     color: color.color_black,
     paddingRight: 20,

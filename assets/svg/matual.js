@@ -4,7 +4,7 @@ import Svg, { Defs, Path, G, Mask, Use,ClipPath,Rect } from "react-native-svg"
 function Matual(props) {
   return (
     <Svg
-    width={27}
+    width={28}
     height={27}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

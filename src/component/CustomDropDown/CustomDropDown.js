@@ -14,7 +14,7 @@ const CustomDropDown = (props) => {
     textStyle={{
       fontSize: 13,
       fontFamily: font.nunitobold,
-      color: color.color_black,
+      color: color.color_white,
     }}
     dropdownTextStyle={{
       fontSize: 13,

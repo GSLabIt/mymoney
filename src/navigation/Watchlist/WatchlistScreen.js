@@ -186,7 +186,7 @@ const WatchlistScreen = ({navigation}) => {
       <ScrollView>
         <View style={{flexDirection: 'row', marginTop: 10}}>
           <TouchableOpacity
-            style={{paddingLeft: 5, paddingRight: 15, paddingTop: 15}}
+            style={{paddingLeft: 20, paddingRight: 15, paddingTop: 15}}
             onPress={() => navigation.openDrawer()}>
             <Drawer />
           </TouchableOpacity>
@@ -223,7 +223,7 @@ const WatchlistScreen = ({navigation}) => {
                 fontFamily: font.nunitobold,
                 color: color.color_black,
               }}>
-              All Stocks
+              Stocks
             </Text>
             <Text
               style={{
@@ -251,7 +251,7 @@ const WatchlistScreen = ({navigation}) => {
                 }} onPress={()=>navigation.navigate("BankDetails")}>
                 <Image source={item.icon} style={{alignSelf: 'center'}} />
                 <View
-                  style={{flexDirection: 'column', flex: 1, paddingLeft: 10}}>
+                  style={{flexDirection: 'column', flex: 1, paddingLeft: 10,alignSelf:"center"}}>
                   <Text
                     style={{
                       fontSize: 14,
@@ -308,6 +308,7 @@ const WatchlistScreen = ({navigation}) => {
                       paddingTop: 2,
                       color: item.colorstatus,
                       textAlign: 'center',
+                      alignSelf:"flex-end"
                     }}>
                     {item.prise}
                   </Text>
@@ -397,7 +398,7 @@ const WatchlistScreen = ({navigation}) => {
                 }} onPress={()=>navigation.navigate("BankDetails")}>
                 <View style={{alignSelf: 'center'}}>{item.icon}</View>
                 <View
-                  style={{flexDirection: 'column', flex: 1, paddingLeft: 10}}>
+                  style={{flexDirection: 'column', flex: 1, paddingLeft: 10,alignSelf:"center"}}>
                   <Text
                     style={{
                       fontSize: 14,
@@ -454,6 +455,7 @@ const WatchlistScreen = ({navigation}) => {
                       paddingTop: 2,
                       color: item.colorstatus,
                       textAlign: 'center',
+                      alignSelf:"flex-end"
                     }}>
                     {item.prise}
                   </Text>
@@ -530,7 +532,7 @@ const WatchlistScreen = ({navigation}) => {
               justifyContent: 'space-around',
               paddingHorizontal: 10,
               paddingVertical: 10,
-              marginBottom: 50,
+              marginBottom: 30,
             }}>
             <View
               style={{

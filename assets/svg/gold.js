@@ -4,7 +4,7 @@ import Svg, { Defs, Path, G, Mask, Use,ClipPath,Rect } from "react-native-svg"
 function Gold(props) {
   return (
     <Svg
-    width={26}
+    width={28}
     height={26}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

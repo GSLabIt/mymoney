@@ -10,7 +10,7 @@ const appheader = props => {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={props.onPress}
-        style={{alignSelf: 'center', paddingTop: 10}}>
+        style={{alignSelf: 'center', paddingTop: 10,paddingLeft:15}}>
         <Back />
       </TouchableOpacity>
       <Text style={styles.headerText}>{props.header}</Text>

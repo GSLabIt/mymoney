@@ -58,7 +58,7 @@ const Holding = () => {
               <Text
                 style={{
                   fontSize: 12,
-                  fontFamily: font.nunitoregular,
+                  fontFamily: font.nunitosemibold,
                   fontWeight: '600',
                   paddingTop: 2,
                   color: color.color_black,
@@ -167,13 +167,14 @@ const Holding = () => {
           paddingHorizontal: 15,
           borderTopColor: color.color_gray,
           borderTopWidth: 1,
+          
         }}>
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}>
-          <View style={{flexDirection: 'column'}}>
+          <View style={{flexDirection: 'column',paddingTop:10}}>
             <Text
               style={{
                 fontSize: 12,
@@ -186,7 +187,7 @@ const Holding = () => {
               30200.00
             </Text>
           </View>
-          <View style={{flexDirection: 'column'}}>
+          <View style={{flexDirection: 'column',paddingTop:10}}>
             <Text
               style={{
                 fontSize: 12,

@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     color: color.color_black,
     textAlign: 'center',
     flex: 1,
-    right:15
+    right:35
    
   },
 });

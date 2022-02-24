@@ -32,8 +32,10 @@ const renderTabBar = props => {
           style={{
             backgroundColor:focused ? "#EDF1F9" : "transparent",
             paddingVertical:5,
-            paddingHorizontal:10,
+            paddingHorizontal:15,
             borderRadius:30,
+            borderWidth:1,
+            borderColor:focused ? "#EDF1F9" :"#DFDFDF"
            
             
           }}>
