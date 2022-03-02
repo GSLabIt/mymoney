@@ -116,7 +116,13 @@ const VerifyNumberScreen = ({navigation}) => {
             </Text>
           </View>
 
-          <View style={{justifyContent: 'flex-end', flex: 1, marginTop: 70}}>
+          <View
+            style={{
+              justifyContent: 'flex-end',
+              flex: 1,
+              marginTop: 70,
+              marginBottom: 10,
+            }}>
             <CustomButton
               textname="Submit"
               onPress={() => {

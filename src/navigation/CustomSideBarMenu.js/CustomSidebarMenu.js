@@ -119,7 +119,7 @@ const CustomSidebarMenu = props => {
                 }}
                 onPress={() => {
                   setFocus(false);
-                  // press
+                  press()
                 }}>
                 <Text
                   style={[

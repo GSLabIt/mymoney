@@ -26,7 +26,7 @@ const NotificationScreen = ({navigation}) => {
     },
     {
       icon: <Notification />,
-      text: 'Justas Galaburda5 hrs ago5 hrs ago   ',
+      text: 'Justas Galaburda5 hrs ago5 hrs ago    ',
       time: '2.00 pm',
     },
     {
@@ -49,12 +49,17 @@ const NotificationScreen = ({navigation}) => {
         data={DATA}
         renderItem={({item, index}) => (
           <View
-            style={{flexDirection: 'row', marginTop: 20, marginHorizontal: 5}}>
+            style={{
+              flexDirection: 'row',
+              marginTop: 20,
+              marginHorizontal: 5,
+            }}>
             {item.icon}
+
             <Text
               style={{
                 alignSelf: 'center',
-                flex: 1,
+                paddingLeft: 20,
                 fontSize: 14,
                 textAlign: 'center',
                 color: color.color_lightblack,
@@ -62,10 +67,14 @@ const NotificationScreen = ({navigation}) => {
               }}>
               {item.text}
             </Text>
+
             <Text
               style={{
                 alignSelf: 'center',
+                flex: 1,
                 justifyContent: 'flex-end',
+
+                textAlign: 'right',
 
                 fontSize: 12,
                 color: color.color_notification,
