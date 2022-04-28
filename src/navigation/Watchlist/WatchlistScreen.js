@@ -9,22 +9,26 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState, useEffect} from 'react';
-import {styles} from './styles';
-import {font} from '../../common/Font';
-import {color} from '../../common/color';
+import React, { useState, useEffect } from 'react';
+import { styles } from './styles';
+import { font } from '../../common/Font';
+import { color } from '../../common/color';
 import Drawer from '../../../assets/svg/drawer';
 import CustomSearch from '../../component/CustomSearchview/CustomSearch';
 import Bell from '../../../assets/svg/bell';
 import WatchListTopTab from '../watchlisttoptab/WatchListTopTab';
-import {LineChart} from 'react-native-chart-kit';
+import { LineChart } from 'react-native-chart-kit';
 import Reliance from '../../../assets/svg/reliance';
 import Cadila from '../../../assets/svg/cadila';
+import Axis from "../../../assets/svg/axis";
+import Parle from '../../../assets/svg/parle';
+import Hdfc from '../../../assets/svg/hdfc';
+import Yes from '../../../assets/svg/yes';
 
-const WatchlistScreen = ({navigation}) => {
+const WatchlistScreen = ({ navigation }) => {
   const DATA = [
     {
-      icon: require('../../../assets/Image/axis.png'),
+      icon: <Axis />,
       bankname: 'AXISBANK',
       nse: 'NSE',
       prise: '2126.20',
@@ -41,7 +45,7 @@ const WatchlistScreen = ({navigation}) => {
       },
     },
     {
-      icon: require('../../../assets/Image/yes.png'),
+      icon: <Yes />,
       bankname: 'YESBANK',
       nse: 'NSE',
       prise: '245.20',
@@ -58,7 +62,7 @@ const WatchlistScreen = ({navigation}) => {
       },
     },
     {
-      icon: require('../../../assets/Image/hdfc.png'),
+      icon: <Hdfc />,
       bankname: 'HDFCBANK',
       nse: 'BSE',
       prise: '1085.00',
@@ -75,7 +79,7 @@ const WatchlistScreen = ({navigation}) => {
       },
     },
     {
-      icon: require('../../../assets/Image/parle.png'),
+      icon: <Parle />,
       bankname: 'PARLE',
       nse: 'NSE',
       prise: '245.20',
@@ -184,22 +188,22 @@ const WatchlistScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <View style={{flexDirection: 'row', marginTop: 10}}>
+        <View style={{ flexDirection: 'row', marginTop: 10 }}>
           <TouchableOpacity
-            style={{paddingLeft: 20, paddingRight: 15, paddingTop: 15}}
+            style={{ paddingLeft: 20, paddingRight: 15, paddingTop: 15 }}
             onPress={() => navigation.openDrawer()}>
             <Drawer />
           </TouchableOpacity>
-          <View style={{flex: 1, marginRight: 10}}>
+          <View style={{ flex: 1, marginRight: 10 }}>
             <CustomSearch />
           </View>
         </View>
         <TouchableOpacity
-          style={{alignSelf: 'flex-end', paddingRight: 15, paddingTop: 10}}
+          style={{ alignSelf: 'flex-end', paddingRight: 15, paddingTop: 10 }}
           onPress={() => navigation.navigate('NotificationScreen')}>
           <Bell />
         </TouchableOpacity>
-        <View style={{height: '23%'}}>
+        <View style={{ height: '23%' }}>
           <WatchListTopTab />
         </View>
 
@@ -238,7 +242,7 @@ const WatchlistScreen = ({navigation}) => {
 
           <FlatList
             data={DATA}
-            renderItem={({item, index}) => (
+            renderItem={({ item, index }) => (
               <TouchableOpacity
                 style={{
                   backgroundColor: color.color_lightblue,
@@ -248,10 +252,11 @@ const WatchlistScreen = ({navigation}) => {
                   justifyContent: 'space-between',
                   paddingHorizontal: 10,
                   paddingVertical: 10,
-                }} onPress={()=>navigation.navigate("BankDetails")}>
-                <Image source={item.icon} style={{alignSelf: 'center'}} />
+                }} onPress={() => navigation.navigate("BankDetails")}>
+
+                <View style={{ alignSelf: 'center' }}>{item.icon}</View>
                 <View
-                  style={{flexDirection: 'column', flex: 1, paddingLeft: 10,alignSelf:"center"}}>
+                  style={{ flexDirection: 'column', flex: 1, paddingLeft: 10, alignSelf: "center" }}>
                   <Text
                     style={{
                       fontSize: 14,
@@ -299,7 +304,7 @@ const WatchlistScreen = ({navigation}) => {
                   bezier
                 />
 
-                <View style={{flexDirection: 'column'}}>
+                <View style={{ flexDirection: 'column' }}>
                   <Text
                     style={{
                       fontSize: 15,
@@ -308,12 +313,12 @@ const WatchlistScreen = ({navigation}) => {
                       paddingTop: 2,
                       color: item.colorstatus,
                       textAlign: 'center',
-                      alignSelf:"flex-end"
+                      alignSelf: "flex-end"
                     }}>
                     {item.prise}
                   </Text>
 
-                  <View style={{flexDirection: 'row'}}>
+                  <View style={{ flexDirection: 'row' }}>
                     <Text
                       style={{
                         fontSize: 13,
@@ -385,7 +390,7 @@ const WatchlistScreen = ({navigation}) => {
           </View>
           <FlatList
             data={MOSTDATA}
-            renderItem={({item, index}) => (
+            renderItem={({ item, index }) => (
               <TouchableOpacity
                 style={{
                   backgroundColor: color.color_lightblue,
@@ -395,10 +400,10 @@ const WatchlistScreen = ({navigation}) => {
                   justifyContent: 'space-between',
                   paddingHorizontal: 10,
                   paddingVertical: 10,
-                }} onPress={()=>navigation.navigate("BankDetails")}>
-                <View style={{alignSelf: 'center'}}>{item.icon}</View>
+                }} onPress={() => navigation.navigate("BankDetails")}>
+                <View style={{ alignSelf: 'center' }}>{item.icon}</View>
                 <View
-                  style={{flexDirection: 'column', flex: 1, paddingLeft: 10,alignSelf:"center"}}>
+                  style={{ flexDirection: 'column', flex: 1, paddingLeft: 10, alignSelf: "center" }}>
                   <Text
                     style={{
                       fontSize: 14,
@@ -446,7 +451,7 @@ const WatchlistScreen = ({navigation}) => {
                   bezier
                 />
 
-                <View style={{flexDirection: 'column'}}>
+                <View style={{ flexDirection: 'column' }}>
                   <Text
                     style={{
                       fontSize: 15,
@@ -455,12 +460,12 @@ const WatchlistScreen = ({navigation}) => {
                       paddingTop: 2,
                       color: item.colorstatus,
                       textAlign: 'center',
-                      alignSelf:"flex-end"
+                      alignSelf: "flex-end"
                     }}>
                     {item.prise}
                   </Text>
 
-                  <View style={{flexDirection: 'row'}}>
+                  <View style={{ flexDirection: 'row' }}>
                     <Text
                       style={{
                         fontSize: 13,
@@ -541,7 +546,7 @@ const WatchlistScreen = ({navigation}) => {
                 backgroundColor: color.color_red,
               }}
             />
-            <View style={{flexDirection: 'column', paddingLeft: 5}}>
+            <View style={{ flexDirection: 'column', paddingLeft: 5 }}>
               <Text
                 style={{
                   fontSize: 9,
@@ -558,7 +563,7 @@ const WatchlistScreen = ({navigation}) => {
                 }}>
                 215.15
               </Text>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{ flexDirection: 'row' }}>
                 <Text
                   style={{
                     fontSize: 8,
@@ -593,7 +598,7 @@ const WatchlistScreen = ({navigation}) => {
                 backgroundColor: color.color_green,
               }}
             />
-            <View style={{flexDirection: 'column', paddingLeft: 5}}>
+            <View style={{ flexDirection: 'column', paddingLeft: 5 }}>
               <Text
                 style={{
                   fontSize: 9,
@@ -610,7 +615,7 @@ const WatchlistScreen = ({navigation}) => {
                 }}>
                 456.40
               </Text>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{ flexDirection: 'row' }}>
                 <Text
                   style={{
                     fontSize: 8,
@@ -645,7 +650,7 @@ const WatchlistScreen = ({navigation}) => {
                 backgroundColor: color.color_green,
               }}
             />
-            <View style={{flexDirection: 'column', paddingLeft: 5}}>
+            <View style={{ flexDirection: 'column', paddingLeft: 5 }}>
               <Text
                 style={{
                   fontSize: 9,
@@ -662,7 +667,7 @@ const WatchlistScreen = ({navigation}) => {
                 }}>
                 895.78
               </Text>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{ flexDirection: 'row' }}>
                 <Text
                   style={{
                     fontSize: 8,
@@ -697,7 +702,7 @@ const WatchlistScreen = ({navigation}) => {
                 backgroundColor: color.color_red,
               }}
             />
-            <View style={{flexDirection: 'column', paddingLeft: 5}}>
+            <View style={{ flexDirection: 'column', paddingLeft: 5 }}>
               <Text
                 style={{
                   fontSize: 9,
@@ -714,7 +719,7 @@ const WatchlistScreen = ({navigation}) => {
                 }}>
                 1454.78
               </Text>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{ flexDirection: 'row' }}>
                 <Text
                   style={{
                     fontSize: 8,

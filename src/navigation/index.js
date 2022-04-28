@@ -1,5 +1,5 @@
-import {ImageComponent, StyleSheet, Text, View} from 'react-native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { ImageComponent, StyleSheet, Text, View } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from '../screen/SplashScreen/SplashScreen';
 import LoginScreen from '../screen/LoginScreen/LoginScreen';
 import SignUpScreen from '../screen/SignUpScreen/SignUpScreen';
@@ -30,6 +30,17 @@ import NotificationScreen from '../screen/Notification/NotificationScreen';
 import useStore from '../../store';
 // import SeeAll from '../screen/SeeAll/SeeAll';
 import BankDetails from '../screen/BankDetailsScreen/BankDetails';
+import MatualFundsScreen from '../screen/MatualFunds/MatualFundsScreen';
+import AllMatualFundScreen from '../screen/AllMatualFunds/AllMatualFundScreen';
+import FilterShortScreen from '../screen/FilterShort/FilterShortScreen';
+import AxisBankDetailsScreen from "../screen/AxisBankDetails/AxisBankDetailsScreen";
+import IpoScreen from '../screen/Ipo/IpoScreen';
+import BankIpoScreen from '../screen/BankIpoDetailScreen/BankIpoScreen';
+import PriceAlertScreen from '../screen/CreatePriceAlert/PriceAlertScreen';
+import SearchPriceAlertScreen from '../screen/SearchPriceAlertList/SearchPriceAlertScreen';
+import MarginCalculatorScreen from '../screen/MarginCalculator/MarginCalculatorScreen';
+import ResearchScreen from '../screen/Research/ResearchScreen';
+import GoldBuyScreen from '../screen/GoldBuy/GoldBuyScreen';
 
 export const Auth = () => {
   const Stack = createNativeStackNavigator();
@@ -39,58 +50,58 @@ export const Auth = () => {
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
 
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="SignUpScreen"
         component={SignUpScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="ForgotPassword"
         component={ForgotPassword}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="VerificationPinScreen"
         component={VerificationPinScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="EmailVarification"
         component={EmailVarification}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="ForgotPinScreen"
         component={ForgotPinScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="CreatePinScreen"
         component={CreatePinScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="ConformPinscreen"
         component={ConformPinscreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="EmailPasswordchange"
         component={EmailPasswordchange}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="ChangePassword"
         component={ChangePassword}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
@@ -98,86 +109,86 @@ export const Auth = () => {
 
 export const MainStack = () => {
   const Stack = createNativeStackNavigator();
-  const {issign} = useStore();
+  const { issign } = useStore();
   return (
     <Stack.Navigator>
       {!issign ? (
         <Stack.Screen
           name="Auth"
           component={Auth}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
       ) : (
         <Stack.Screen
           name="Tabstack"
           component={Tabstack}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
       )}
       <Stack.Screen
         name="InformationScreen"
         component={InformationScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="VerifyNumberScreen"
         component={VerifyNumberScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="TabVarificationPin"
         component={TabVarificationPin}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="WellDone"
         component={WellDone}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="TabSecurity"
         component={TabSecurity}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="TabChangePassword"
         component={TabChangePassword}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="SecurityWellDone"
         component={SecurityWellDone}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="EnterOldPinScreen"
         component={EnterOldPinScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="EnterNewPinScreen"
         component={EnterNewPinScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="SecurityConformPinScreen"
         component={SecurityConformPinScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="SecurityForgotPin"
         component={SecurityForgotPin}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="SecurityEmailVarification"
         component={SecurityEmailVarification}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="NotificationScreen"
         component={NotificationScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       {/* <Stack.Screen
         name="SeeAll"
@@ -187,7 +198,62 @@ export const MainStack = () => {
       <Stack.Screen
         name="BankDetails"
         component={BankDetails}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="MatualFundsScreen"
+        component={MatualFundsScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="AllMatualFundScreen"
+        component={AllMatualFundScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="FilterShortScreen"
+        component={FilterShortScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="AxisBankDetailsScreen"
+        component={AxisBankDetailsScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="IpoScreen"
+        component={IpoScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="BankIpoScreen"
+        component={BankIpoScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="PriceAlertScreen"
+        component={PriceAlertScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SearchPriceAlertScreen"
+        component={SearchPriceAlertScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="MarginCalculatorScreen"
+        component={MarginCalculatorScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ResearchScreen"
+        component={ResearchScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="GoldBuyScreen"
+        component={GoldBuyScreen}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

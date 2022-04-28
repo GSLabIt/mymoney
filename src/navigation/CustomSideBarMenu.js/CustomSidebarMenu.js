@@ -1,23 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
-  Alert,
-  StyleSheet,
-  Image,
-  SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
 
 import {
   DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
 } from '@react-navigation/drawer';
 import Mattie from '../../../assets/svg/mattie';
-import {styles} from './styles';
-import {font} from '../../common/Font';
-import {color} from '../../common/color';
+import { styles } from './styles';
+import { font } from '../../common/Font';
+import { color } from '../../common/color';
 import Dashbord from '../../../assets/svg/dashbord';
 import Matual from '../../../assets/svg/matual';
 import Research from '../../../assets/svg/research';
@@ -27,14 +21,15 @@ import Calculator from '../../../assets/svg/calculator';
 import Gold from '../../../assets/svg/gold';
 import Signout from '../../../assets/svg/signout';
 import Modal from 'react-native-modal';
-import CustomButton from '../../component/buttons/CustomButton';
 import Modallog from '../../../assets/svg/modallog';
 import useStore from '../../../store';
+import { useNavigation } from '@react-navigation/native';
 
 const CustomSidebarMenu = props => {
+  const navigation = useNavigation();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [focus, setFocus] = useState(true);
-  const {press} = useStore();
+  const { press } = useStore();
   const toggleModal = () => {
     setFocus(true);
     setIsModalVisible(!isModalVisible);
@@ -51,41 +46,40 @@ const CustomSidebarMenu = props => {
           <Text style={styles.dashbord}>Dashboard</Text>
         </View>
 
-        <View style={styles.dashbordview}>
+        <TouchableOpacity style={styles.dashbordview} onPress={() => navigation.navigate('MatualFundsScreen')}>
           <Matual />
 
           <Text style={styles.dashbord}>Matual Funds</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.dashbordview}>
+        <TouchableOpacity style={styles.dashbordview} onPress={() => navigation.navigate('ResearchScreen')}>
           <Research />
 
           <Text style={styles.dashbord}>Research</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.dashbordview}>
+        <TouchableOpacity style={styles.dashbordview} onPress={() => navigation.navigate('PriceAlertScreen')}>
           <Price />
           <Text style={styles.dashbord}>Price alert</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.dashbordview}>
+        <TouchableOpacity style={styles.dashbordview} onPress={() => navigation.navigate('IpoScreen')}>
           <Ipo />
-
           <Text style={styles.dashbord}>IPO</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.dashbordview}>
+        <TouchableOpacity style={styles.dashbordview} onPress={() => navigation.navigate('MarginCalculatorScreen')}>
           <Calculator />
           <Text style={styles.dashbord}>Margin Calculator</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.dashbordview}>
+        <TouchableOpacity style={styles.dashbordview} onPress={() => navigation.navigate('GoldBuyScreen')}>
           <Gold />
           <Text style={styles.dashbord}>Gold</Text>
-        </View>
+        </TouchableOpacity>
 
         <TouchableOpacity
-          style={[styles.dashbordview, {paddingBottom: 20}]}
+          style={[styles.dashbordview, { paddingBottom: 20 }]}
           onPress={() => toggleModal()}>
           <Signout />
           <Text style={styles.dashbord}>Sign out</Text>
@@ -98,7 +92,7 @@ const CustomSidebarMenu = props => {
           backdropColor={color.color_black}
           backdropOpacity={0.5}>
           <View style={styles.mainview}>
-            <View style={{alignSelf: 'center'}}>
+            <View style={{ alignSelf: 'center' }}>
               <Modallog />
             </View>
             <Text style={styles.suretext}>
@@ -124,7 +118,7 @@ const CustomSidebarMenu = props => {
                 <Text
                   style={[
                     styles.yestext,
-                    {color: focus ? color.color_black : color.color_white},
+                    { color: focus ? color.color_black : color.color_white },
                   ]}>
                   Yes
                 </Text>
@@ -146,7 +140,7 @@ const CustomSidebarMenu = props => {
                 <Text
                   style={[
                     styles.yestext,
-                    {color: focus ? color.color_white : color.color_black},
+                    { color: focus ? color.color_white : color.color_black },
                   ]}>
                   No
                 </Text>

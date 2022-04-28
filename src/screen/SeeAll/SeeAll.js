@@ -16,11 +16,18 @@ import {color} from '../../common/color';
 import Drawer from '../../../assets/svg/drawer';
 import CustomSearch from '../../component/CustomSearchview/CustomSearch';
 import {LineChart} from 'react-native-chart-kit';
+import Yes from "../../../assets/svg/yes";
+import Hdfc from '../../../assets/svg/hdfc';
+import Parle from '../../../assets/svg/parle';
+import Axis from '../../../assets/svg/axis';
+import Sunpharma from '../../../assets/svg/sunpharma';
+import Icici from '../../../assets/svg/icici';
+import Smallreliance from '../../../assets/svg/smallreliance';
 
 const SeeAll = ({navigation}) => {
   const DATA = [
     {
-      icon: require('../../../assets/Image/axis.png'),
+      icon:<Axis/>,
       bankname: 'AXISBANK',
       nse: 'NSE',
       prise: '2126.20',
@@ -37,7 +44,7 @@ const SeeAll = ({navigation}) => {
       },
     },
     {
-      icon: require('../../../assets/Image/yes.png'),
+      icon:<Yes/>,
       bankname: 'YESBANK',
       nse: 'NSE',
       prise: '245.20',
@@ -54,7 +61,7 @@ const SeeAll = ({navigation}) => {
       },
     },
     {
-      icon: require('../../../assets/Image/hdfc.png'),
+      icon: <Hdfc/>,
       bankname: 'HDFCBANK',
       nse: 'BSE',
       prise: '1085.00',
@@ -71,7 +78,7 @@ const SeeAll = ({navigation}) => {
       },
     },
     {
-      icon: require('../../../assets/Image/parle.png'),
+      icon:<Parle/>,
       bankname: 'PARLE',
       nse: 'NSE',
       prise: '245.20',
@@ -89,7 +96,7 @@ const SeeAll = ({navigation}) => {
     },
 
     {
-      icon: require('../../../assets/Image/Reliance.png'),
+      icon: <Smallreliance/>,
       bankname: 'RELIANCE',
       nse: 'NSE',
       prise: '2510.20',
@@ -107,7 +114,7 @@ const SeeAll = ({navigation}) => {
     },
 
     {
-      icon: require('../../../assets/Image/Sunpharma.png'),
+      icon: <Sunpharma/>,
       bankname: 'Sunpharma',
       nse: 'NSE',
       prise: '252.02',
@@ -125,7 +132,7 @@ const SeeAll = ({navigation}) => {
     },
 
     {
-      icon: require('../../../assets/Image/hdfc.png'),
+      icon: <Hdfc/>,
       bankname: 'HDFCBANK',
       nse: 'BSE',
       prise: '2510.20',
@@ -143,7 +150,7 @@ const SeeAll = ({navigation}) => {
     },
 
     {
-      icon: require('../../../assets/Image/icici.png'),
+      icon: <Icici/>,
       bankname: 'ICICI BANK',
       nse: 'NSE',
       prise: '451.20',
@@ -161,7 +168,7 @@ const SeeAll = ({navigation}) => {
     },
 
     {
-      icon: require('../../../assets/Image/yes.png'),
+      icon:<Yes/>,
       bankname: 'YESBANK',
       nse: 'NSE',
       prise: '245.20',
@@ -226,7 +233,7 @@ const SeeAll = ({navigation}) => {
                 paddingVertical: 10,
               }}
               onPress={() => navigation.navigate('BankDetails')}>
-              <Image source={item.icon} style={{alignSelf: 'center'}} />
+             <View style={{ alignSelf: 'center' }}>{item.icon}</View>
               <View style={{flexDirection: 'column', flex: 1, paddingLeft: 10}}>
                 <Text
                   style={{

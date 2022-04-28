@@ -5,20 +5,23 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-import React, {useState} from 'react';
-import {styles} from './styles';
-import {font} from '../../common/Font';
-import {color} from '../../common/color';
+import React, { useState } from 'react';
+import { styles } from './styles';
+import { font } from '../../common/Font';
+import { color } from '../../common/color';
 import Modal from 'react-native-modal';
 import Cross from '../../../assets/svg/cross';
 
 import Dropdown from '../../../assets/svg/dropdown';
 import CustomSwitch from '../CustomSwitch/CustomSwitch';
 import CustomDropDown from '../CustomDropDown/CustomDropDown';
+import { useNavigation } from '@react-navigation/native';
 
 const CustomSellModal = props => {
   const [focus, setFocus] = useState(true);
   const [quantity, setQuantity] = useState('');
+  const navigation = useNavigation();
+
 
   return (
     <Modal
@@ -27,7 +30,7 @@ const CustomSellModal = props => {
       animationOut={'fadeInDown'}
       backdropColor={color.color_black}
       backdropOpacity={0.5}
-      style={{margin: 0}}>
+      style={{ margin: 0 }}>
       <View
         style={{
           backgroundColor: color.color_white,
@@ -38,7 +41,7 @@ const CustomSellModal = props => {
           borderRadius: 15,
         }}>
         <TouchableOpacity
-          style={{alignSelf: 'flex-end'}}
+          style={{ alignSelf: 'flex-end' }}
           onPress={props.onPressClose}>
           <Cross />
         </TouchableOpacity>
@@ -74,7 +77,7 @@ const CustomSellModal = props => {
             </View>
 
             <View style={styles.subview}>
-              <Text style={[styles.rupeemodal, {color: `${props.maincolor}`}]}>
+              <Text style={[styles.rupeemodal, { color: `${props.maincolor}` }]}>
                 ₹ 2126.20
               </Text>
               <View style={styles.precentageview}>
@@ -82,7 +85,7 @@ const CustomSellModal = props => {
                 <Text
                   style={[
                     styles.percentagemodal,
-                    {color: `${props.maincolor}`},
+                    { color: `${props.maincolor}` },
                   ]}>
                   +0.72%
                 </Text>
@@ -94,7 +97,7 @@ const CustomSellModal = props => {
           <View style={styles.horizontalline} />
 
           <View style={styles.Quantityview}>
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text style={styles.QuantityText}>Quantity</Text>
               <TextInput
                 onChangeText={setQuantity}
@@ -104,19 +107,19 @@ const CustomSellModal = props => {
               />
             </View>
 
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text style={styles.QuantityText}>Prise</Text>
 
               <Text style={styles.QuantityNumber}>₹ 2126.20</Text>
             </View>
 
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text style={styles.QuantityText}>Order</Text>
 
               <View
                 style={[
                   styles.dropdownview,
-                  {backgroundColor: `${props.maincolor}`},
+                  { backgroundColor: `${props.maincolor}` },
                 ]}>
                 <CustomDropDown
                   ModalValue={['LIMIT', 'SL', 'SLM']}
@@ -128,7 +131,7 @@ const CustomSellModal = props => {
           </View>
 
           <View style={styles.modeview}>
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text style={styles.QuantityText}>Mode</Text>
 
               <Text style={styles.Intradaytext}>Intraday</Text>
@@ -136,13 +139,13 @@ const CustomSellModal = props => {
 
             <Text style={styles.Deliverytext}>Delivery</Text>
 
-            <View style={{flexDirection: 'column'}}>
+            <View style={{ flexDirection: 'column' }}>
               <Text style={styles.QuantityText}>Validity</Text>
 
               <View
                 style={[
                   styles.dropdownview,
-                  {backgroundColor: `${props.maincolor}`, marginTop: 10},
+                  { backgroundColor: `${props.maincolor}`, marginTop: 10 },
                 ]}>
                 <CustomDropDown
                   ModalValue={['DAY', 'SL', 'SLM']}
@@ -154,7 +157,7 @@ const CustomSellModal = props => {
           </View>
 
           <View style={styles.horizontalline} />
-          <View style={{flexDirection: 'row', marginTop: 15}}>
+          <View style={{ flexDirection: 'row', marginTop: 15 }}>
             <Text style={styles.Stoploss}>Set Stoploss</Text>
 
             <CustomSwitch MainColor={props.maincolor} />
@@ -162,8 +165,8 @@ const CustomSellModal = props => {
 
           <View style={styles.horizontalline} />
 
-          <View style={{flexDirection: 'row', marginTop: 15}}>
-            <Text style={[styles.Stoploss, {paddingRight: 40}]}>
+          <View style={{ flexDirection: 'row', marginTop: 15 }}>
+            <Text style={[styles.Stoploss, { paddingRight: 40 }]}>
               Set target
             </Text>
 
@@ -172,10 +175,10 @@ const CustomSellModal = props => {
 
           <View style={styles.horizontalline} />
 
-          <View
-            style={[styles.leadview, {backgroundColor: `${props.maincolor}`}]}>
+          <TouchableOpacity
+            style={[styles.leadview, { backgroundColor: `${props.maincolor}` }]} onPress={() => navigation.navigate('Tabstack')}>
             <Text style={styles.leadtext}>{props.leadtext}</Text>
-          </View>
+          </TouchableOpacity>
         </ScrollView>
       </View>
     </Modal>

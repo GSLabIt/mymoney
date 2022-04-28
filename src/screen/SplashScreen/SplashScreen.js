@@ -1,11 +1,11 @@
-import {StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 import React from 'react';
-import {styles} from './styles';
+import { styles } from './styles';
 import Splashlogo from '../../../assets/svg/splashlogo';
 import CustomButton from '../../component/buttons/CustomButton';
 
 
-const SplashScreen = ({props, navigation}) => {
+const SplashScreen = ({ props, navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mainview}>
@@ -26,7 +26,7 @@ const SplashScreen = ({props, navigation}) => {
             onPress={() => {
               navigation.navigate('SignUpScreen');
             }}>
-            
+
             Sign Up
           </Text>
         </View>

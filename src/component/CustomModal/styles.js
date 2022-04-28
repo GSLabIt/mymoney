@@ -1,13 +1,13 @@
-import {StyleSheet} from 'react-native';
-import {font} from '../../common/Font';
-import {color} from '../../common/color';
+import { StyleSheet } from 'react-native';
+import { font } from '../../common/Font';
+import { color } from '../../common/color';
 
 export const styles = StyleSheet.create({
-  container: {flex: 1, backgroundColor: color.color_lightblue},
-  mainscroll: {backgroundColor: color.color_white, marginTop: -25},
+  container: { flex: 1, backgroundColor: color.color_lightblue },
+  mainscroll: { backgroundColor: color.color_white, marginTop: -25 },
   toptextview: {
     flexDirection: 'row',
-  
+
     paddingTop: 20,
     justifyContent: 'space-between',
   },
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     color: color.color_green,
   },
-  subview: {flexDirection: 'column'},
+  subview: { flexDirection: 'column' },
   rupeetext: {
     fontSize: 18,
     fontFamily: font.nunitobold,
@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     borderRadius: 56,
   },
-  precentageview: {flexDirection: 'row'},
+  precentageview: { flexDirection: 'row' },
   baracket: {
     fontSize: 18,
     fontFamily: font.nunitoregular,
@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
     color: color.color_black,
     paddingHorizontal: 15,
   },
-  marketview: {flexDirection: 'row', height: 325, paddingHorizontal: 10},
+  marketview: { flexDirection: 'row', height: 325, paddingHorizontal: 10 },
   bidtext: {
     fontSize: 13,
     fontFamily: font.nunitoregular,
@@ -110,16 +110,16 @@ export const styles = StyleSheet.create({
   rupeemodal: {
     fontSize: 18,
     fontFamily: font.nunitobold,
-    alignSelf:"flex-end"
+    alignSelf: "flex-end"
   },
   baracketmodal: {
     fontSize: 13,
     fontFamily: font.nunitoregular,
     color: color.color_black,
   },
-  percentagemodal: {fontFamily: font.nunitoregular, fontSize: 13},
+  percentagemodal: { fontFamily: font.nunitoregular, fontSize: 13 },
 
-  Quantityview: {flexDirection: 'row', justifyContent: 'space-between'},
+  Quantityview: { flexDirection: 'row', justifyContent: 'space-between' },
   QuantityText: {
     fontSize: 13,
     fontFamily: font.nunitosemibold,
@@ -128,7 +128,7 @@ export const styles = StyleSheet.create({
   },
   QuantitInput: {
     borderWidth: 1,
-    color: color.color_gray,
+    color: color.color_black,
     borderRadius: 50,
     height: 35,
     fontSize: 12,
