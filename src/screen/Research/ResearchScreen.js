@@ -49,7 +49,7 @@ const ResearchScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Appheader onPress={() => navigation.goBack()} header="Create Price Alert" />
+            <Appheader onPress={() => navigation.goBack()} header="Research" />
 
             <ScrollView style={styles.mainscroll}>
 

@@ -14,7 +14,7 @@ const MarginCalculatorScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Appheader onPress={() => navigation.goBack()} header="Create Price Alert" />
+            <Appheader onPress={() => navigation.goBack()} header="Margin Calculator" />
 
             <ScrollView style={styles.mainscroll}>
 
@@ -46,7 +46,7 @@ const MarginCalculatorScreen = ({ navigation }) => {
                         activeOutlineColor={color.color_limit}
                         theme={{
                             colors: {
-                                background: color.color_white
+                                background: color.color_white,
                             }
                         }}
                     />
@@ -75,15 +75,15 @@ const MarginCalculatorScreen = ({ navigation }) => {
 
                     <View style={styles.seperatorLine} />
 
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingTop: 10 }}>
-                        <Text style={{ fontSize: 18, fontFamily: font.nunitobold, color: color.color_black }}>Markup:</Text>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingTop: 0 }}>
+                        <Text style={{ fontSize: 18, fontFamily: font.nunitoregular, color: color.color_black }}>Markup:</Text>
                         <Text style={{ fontSize: 18, fontFamily: font.nunitoregular, color: color.color_black }}>100.00%</Text>
                     </View>
 
                     <View style={styles.seperatorLine} />
 
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingTop: 10 }}>
-                        <Text style={{ fontSize: 18, fontFamily: font.nunitobold, color: color.color_black }}>Markup:</Text>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, paddingTop: 0,paddingBottom:10 }}>
+                        <Text style={{ fontSize: 18, fontFamily: font.nunitoregular, color: color.color_black }}>Markup:</Text>
                         <Text style={{ fontSize: 18, fontFamily: font.nunitoregular, color: color.color_black }}>100.00%</Text>
                     </View>
 

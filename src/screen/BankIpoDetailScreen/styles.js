@@ -46,6 +46,7 @@ export const styles = StyleSheet.create({
     },
     horizontalline: {
         borderBottomColor: color.color_bankhorizontal,
+        opacity:0.5,
         borderBottomWidth: 3,
         marginTop: 15,
     },

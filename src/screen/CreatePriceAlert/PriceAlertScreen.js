@@ -20,7 +20,7 @@ const PriceAlertScreen = ({ navigation }) => {
 
             <ScrollView style={styles.mainscroll}>
 
-                <TouchableOpacity style={{ flexDirection: 'row', marginHorizontal: 20, marginTop: 10 }} onPress={() => navigation.navigate('SearchPriceAlertScreen')}>
+                <TouchableOpacity style={{ flexDirection: 'row', marginHorizontal: 20, marginTop: 20 }} onPress={() => navigation.navigate('SearchPriceAlertScreen')}>
                     <Axis />
                     <Text style={{ flex: 1, paddingLeft: 10 }}>AXISBANK</Text>
                     <Smalleft />
@@ -40,7 +40,7 @@ const PriceAlertScreen = ({ navigation }) => {
                     <Text style={{ fontSize: 15, color: color.color_black, fontFamily: font.nunitosemibold }}>Current Price: ₹34,59,494</Text>
                 </View>
 
-                <View style={{ marginVertical: 10, }}>
+                <View style={{ marginVertical: 10, marginTop: 25 }}>
                     <CustomButton
                         textname="Creatr Price Alert"
                     />
@@ -49,11 +49,11 @@ const PriceAlertScreen = ({ navigation }) => {
 
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20 }}>
                     <Text style={{ fontSize: 12, color: color.color_limit, fontFamily: font.nunitoregular }}>Stocks</Text>
-                    <Text style={{ fontSize: 12, color: color.color_limit, fontFamily: font.nunitoregular }}>ALERT PRICE</Text>
+                    <Text style={{ fontSize: 12, color: color.color_limit, fontFamily: font.nunitoregular, paddingRight: 25 }}>ALERT PRICE</Text>
                 </View>
                 <View style={styles.seperatorLine} />
 
-                <TouchableOpacity style={{ flexDirection: 'row', marginHorizontal: 20, marginTop: 10 }} onPress={() => navigation.navigate('IpoScreen')}>
+                <TouchableOpacity style={{ flexDirection: 'row', marginHorizontal: 20, marginTop: 10 }} >
                     <Axis />
                     <Text style={{ flex: 1, paddingLeft: 10 }}>AXISBANK</Text>
                     <Text style={{ fontSize: 16, fontFamily: font.nunitosemibold, color: color.color_black, paddingRight: 10 }}>₹1,100.00</Text>

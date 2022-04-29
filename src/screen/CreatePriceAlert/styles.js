@@ -17,7 +17,8 @@ export const styles = StyleSheet.create({
         marginVertical: 10,
         marginHorizontal: 20,
         borderWidth: 0.2,
-        backgroundColor: color.color_limit,
+        backgroundColor: color.color_bankhorizontal,
+        opacity:0.5
     },
     withouttextinput: {
         marginHorizontal: 20

@@ -92,7 +92,7 @@ const SearchPriceAlertScreen = ({ navigation }) => {
 
             <View style={{ flexDirection: 'row', paddingBottom: 20, paddingVertical: 15, paddingHorizontal: 20 }}>
                 <Text style={{ flex: 1, fontSize: 20, fontFamily: font.nunitobold, color: color.color_black }}>Create Price Alert</Text>
-                <TouchableOpacity onPress={() => navigation.goBack()}>
+                <TouchableOpacity onPress={() => navigation.goBack()} style={{alignSelf:"center"}}>
                     <Cross />
                 </TouchableOpacity>
             </View>
@@ -114,12 +114,12 @@ const SearchPriceAlertScreen = ({ navigation }) => {
                     data={Data}
                     renderItem={({ item, index }) => (
 
-                        <View style={{ flexDirection: "row", paddingVertical: 15 }}>
+                        <TouchableOpacity style={{ flexDirection: "row", paddingVertical: 15 }} onPress={() => navigation.goBack()}>
                             {item.icon}
                             <Text style={{ flex: 1, paddingLeft: 15 }}>{item.bankname}</Text>
                             <Text>{item.price}</Text>
 
-                        </View>
+                        </TouchableOpacity>
 
                     )}
                     keyExtractor={item => item.id}

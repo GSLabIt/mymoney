@@ -26,7 +26,16 @@ export const styles = StyleSheet.create({
         height: 0.6,
         paddingTop: 3,
         backgroundColor: color.color_bankhorizontal,
-
-    }
+        opacity: 0.5
+    },
+    input: {
+        height: 35,
+        margin: 5,
+        borderWidth: 1,
+        padding: 10,
+        borderRadius: 4,
+        borderColor: color.color_bankhorizontal,
+        marginLeft: 0
+    },
 });
 

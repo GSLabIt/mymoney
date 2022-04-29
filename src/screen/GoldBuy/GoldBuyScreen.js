@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Text, View, SafeAreaView, ScrollView, FlatList } from 'react-native'
+import { Text, View, SafeAreaView, ScrollView, FlatList, TextInput } from 'react-native'
 import { styles } from './styles';
 import Appheader from '../../component/AppHeader/appheader';
 import { color } from '../../common/color';
@@ -13,8 +13,8 @@ import CustomButton from '../../component/buttons/CustomButton';
 
 
 const GoldBuyScreen = ({ navigation }) => {
-
-
+    const [text, onChangeText] = useState();
+    const [Wight, onChangeWight] = useState();
     const Data = [
         {
             icon: <Buygoldi />,
@@ -39,10 +39,16 @@ const GoldBuyScreen = ({ navigation }) => {
             <Appheader onPress={() => navigation.goBack()} header="Gold" />
 
             <ScrollView style={styles.mainscroll}>
-                <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: 10, backgroundColor: color.color_darkblue, paddingVertical: 10 }}>
-                    <Text style={{ fontSize: 14, fontFamily: font.nunitobold, color: color.color_white }}>BUY</Text>
-                    <Text style={{ fontSize: 14, fontFamily: font.nunitobold, color: color.color_white }}>VAULT</Text>
-                    <Text style={{ fontSize: 14, fontFamily: font.nunitobold, color: color.color_white }}>SELL</Text>
+                <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: 10, backgroundColor: color.color_darkblue, }}>
+                    <View style={{ backgroundColor: color.color_darkblue, width: "33%", paddingVertical: 10 }}>
+                        <Text style={{ fontSize: 14, fontFamily: font.nunitobold, color: color.color_white, alignSelf: "center" }}>BUY</Text>
+                    </View>
+                    <View style={{ backgroundColor: color.color_lightblue, width: "33%", paddingVertical: 10 }}>
+                        <Text style={{ fontSize: 14, fontFamily: font.nunitobold, color: color.color_black, alignSelf: "center" }}>VAULT</Text>
+                    </View>
+                    <View style={{ backgroundColor: color.color_lightblue, width: "34%", paddingVertical: 10 }}>
+                        <Text style={{ fontSize: 14, fontFamily: font.nunitobold, color: color.color_black, alignSelf: "center" }}>SELL</Text>
+                    </View>
                 </View>
 
                 <View style={{ flexDirection: "row", paddingTop: 20, paddingHorizontal: 20, justifyContent: "space-between" }}>
@@ -68,7 +74,16 @@ const GoldBuyScreen = ({ navigation }) => {
 
                     <View style={{ flexDirection: "column" }}>
                         <Text style={{ color: color.color_limit, fontSize: 12, fontFamily: font.nunitoregular }}>In Rupees</Text>
-                        <Text style={{ borderWidth: 1, borderRadius: 4, paddingVertical: 8, paddingHorizontal: 8, fontSize: 12, fontFamily: font.nunitoregular, marginVertical: 5, borderColor: color.color_filtegray, color: color.color_black }}>₹ : <Text style={{ fontSize: 12, fontFamily: font.nunitoregular, color: color.color_filtegray }}>  Amount</Text></Text>
+
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeText}
+                            value={text}
+                            placeholder={"₹ : Amount"}
+
+                        />
+
+
                         <Text style={{ color: color.color_limit, fontFamily: 10, fontFamily: font.nunitoregular }}>(includs of 3% GST)</Text>
                     </View>
 
@@ -78,7 +93,20 @@ const GoldBuyScreen = ({ navigation }) => {
 
                     <View style={{ flexDirection: "column" }}>
                         <Text style={{ color: color.color_limit, fontFamily: 10, fontFamily: font.nunitoregular }}>In Grams</Text>
-                        <Text style={{ borderWidth: 1, borderRadius: 4, paddingVertical: 8, paddingRight: 50, paddingHorizontal: 8, fontSize: 12, fontFamily: font.nunitoregular, marginVertical: 5, borderColor: color.color_filtegray, color: color.color_placeholder }}>Wight</Text>
+
+                        {/* <Text style={{ borderWidth: 1, borderRadius: 4, paddingVertical: 8, paddingRight: 50, paddingHorizontal: 8, fontSize: 12, fontFamily: font.nunitoregular, marginVertical: 5, borderColor: color.color_filtegray, color: color.color_placeholder }}>Wight</Text> */}
+
+
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeWight}
+                            value={Wight}
+                            placeholder={"Wight"}
+
+                        />
+
+
+
                     </View>
 
                 </View>

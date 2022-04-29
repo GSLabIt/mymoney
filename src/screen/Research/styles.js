@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     },
     seperatorLine: {
         borderWidth: 0.2,
-        backgroundColor: color.color_limit,
+        backgroundColor: color.color_bankhorizontal,
     },
 });
 
